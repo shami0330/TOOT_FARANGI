@@ -1,0 +1,46 @@
+{
+  "name": "toot-farangi",
+  "productName": "توت فرنگی",
+  "version": "100.93.0",
+  "description": "برنامهٔ توت فرنگی برای مک",
+  "main": "main.js",
+  "author": "Toot Farangi",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac --universal"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "app.tootfarangi.mac",
+    "productName": "توت فرنگی",
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.education",
+      "identity": null
+    },
+    "dmg": {
+      "title": "Toot-Farangi"
+    },
+    "artifactName": "Toot-Farangi-${version}-mac.${ext}"
+  }
+}
